@@ -1,10 +1,10 @@
-import Home from "../page/home"
-import About from "../page/About"
+import BasicLayout from "@/layouts/BasicLayout"
+import About from "@/pages/About"
 
 const routerConfig = [
   {
     path: "/",
-    element: <Home />
+    element: <BasicLayout />
   },
   {
     path: "/about",
