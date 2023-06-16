@@ -1,0 +1,18 @@
+.basic-layout {
+  position: relative;
+  background: black;
+  .global-header-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $g-header-height;
+    z-index: 999;
+    background: blue;
+  }
+
+  .content-wrap {
+    margin-top: $g-header-height;
+    background: orange;
+  }
+}

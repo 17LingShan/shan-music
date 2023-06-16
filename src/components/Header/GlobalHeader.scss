@@ -1,0 +1,46 @@
+.global-header {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: $g-header-bg-color;
+  user-select: none;
+
+  .header-content {
+    display: flex;
+    justify-content: center;
+    width: $g-content-wrap;
+    margin: 0 auto;
+
+    .logo {
+      display: flex;
+      margin-right: 1rem;
+      font-size: 12px;
+      align-items: center;
+      cursor: pointer;
+      color: $g-font-color;
+    }
+
+    .header-menu {
+      width: 27rem;
+      height: 100%;
+
+      li {
+        float: left;
+        width: 9rem;
+        font-size: 18px;
+        color: $g-font-color;
+        cursor: pointer;
+
+        div {
+          height: 100%;
+          line-height: $g-header-height;
+          text-align: center;
+        }
+      }
+
+      .menu-active {
+        background: $g-header-active-color;
+      }
+    }
+  }
+}
