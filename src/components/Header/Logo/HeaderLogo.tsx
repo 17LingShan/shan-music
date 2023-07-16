@@ -1,3 +1,5 @@
+import "./HeaderLogo.scss"
+
 function HeaderLogo() {
   return (
     <>

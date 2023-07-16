@@ -13,6 +13,12 @@
 
   .content-wrap {
     margin-top: $g-header-height;
+    min-height: calc(100vh - $g-header-height);
     background: orange;
+
+    .content-inner {
+      margin: 0 auto;
+      width: $g-content-wrap;
+    }
   }
 }

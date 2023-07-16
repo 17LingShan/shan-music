@@ -1,0 +1,22 @@
+.header-menu {
+  width: 27rem;
+  height: 100%;
+
+  li {
+    float: left;
+    width: 9rem;
+    font-size: 18px;
+    color: $g-font-color;
+    cursor: pointer;
+
+    div {
+      height: 100%;
+      line-height: $g-header-height;
+      text-align: center;
+    }
+  }
+
+  .menu-active {
+    background: $g-header-active-color;
+  }
+}

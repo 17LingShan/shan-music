@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom"
+import "./HeaderMenu.scss"
 import routerConfig from "@/config/router.config"
 
 function MenuList() {

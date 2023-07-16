@@ -1,11 +1,9 @@
 import "./GlobalHeader.scss"
-import HeaderMenu from "./HeaderMenu"
-import HeaderLogo from "./HeaderLogo"
-import HeaderInput from "./HeaderInput"
-import { search } from "@/api/music"
+import HeaderMenu from "./Menu/HeaderMenu"
+import HeaderLogo from "./Logo/HeaderLogo"
+import HeaderInput from "./Input/HeaderInput"
 
 function GlobalHeader() {
-  search({ keywords: "海阔天空" }).then((res) => console.log(res))
   return (
     <>
       <div className='global-header'>
