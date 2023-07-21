@@ -1,36 +1,37 @@
-import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
-import { RootState } from "@/store"
-import { searchState } from "@/store/searchSlice"
-import { search } from "@/api/music"
+import { Location, useLocation } from "react-router-dom"
+import SearchView from "./SearchView"
+import { parseSearchParams } from "@/utils/practice"
 
-function FindMusic() {
-  const searchState: searchState = useSelector((state: RootState) => state.search)
+function FindMusic(): React.ReactElement {
+  const location: Location = useLocation()
+  const searchParams = parseSearchParams(location.search)
+  console.log(searchParams)
 
-  let [searchResult, setResult] = useState<Result>()
+  // const searchState: searchState = useSelector((state: RootState) => state.search)
 
-  const handleSearch = async (params: searchState) => {
-    if (!params.keywords) return
-    await search(params).then((res) => {
-      console.log(res)
-      setResult(JSON.parse(JSON.stringify(res.data.result)))
-    })
-  }
+  // let [searchResult, setResult] = useState<Result>()
 
-  useEffect(() => {
-    console.log("searchState", searchState)
-    handleSearch(searchState)
-    console.log(searchResult)
-  }, [searchState])
+  // const handleSearch = async (params: searchState) => {
+  //   if (!params.keywords) return
+  //   await commonSearch(params).then((res) => {
+  //     console.log(res)
+  //     setResult(JSON.parse(JSON.stringify(res.data.result)))
+  //   })
+  // }
+
+  // useEffect(() => {
+  //   handleSearch(searchState)
+  // }, [searchState])
 
   return (
     <>
-      <h1>{searchState.keywords}</h1>
+      {/* <h1>{searchState.keywords}</h1>
       <ul>
         {searchResult?.songs.map((item) => {
           return <li key={item.id}>{item.name}</li>
         })}
-      </ul>
+      </ul> */}
+      <SearchView keywords={searchParams.get("keywords")!} type={searchParams.get("type")!} />
     </>
   )
 }
